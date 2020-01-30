@@ -9,5 +9,11 @@ class ApplicationController < Sinatra::Base
   end
 
   get '/' do
+    redirect to "/articles"
+  end
+  
+  get '/articles/new' do 
+    @article = Article.new
+    erb :new
   end
 end
